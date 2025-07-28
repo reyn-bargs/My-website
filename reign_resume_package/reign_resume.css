@@ -1,0 +1,140 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  padding: 40px;
+}
+.resume {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+}
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  animation: float 3s ease-in-out infinite;
+}
+.intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.intro p {
+  margin-bottom: 8px;
+}
+.info {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.info .box {
+  flex: 1 1 45%;
+  background: #f0f0f0;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  animation: float 3s ease-in-out infinite;
+}
+.info h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #444;
+}
+.info p, .info ul {
+  font-size: 0.95em;
+  line-height: 1.6em;
+}
+.info ul {
+  list-style: circle inside;
+}
+.socials {
+  margin-top: 20px;
+  text-align: center;
+}
+.socials a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 600;
+}
+/* Back Button */
+.back-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 8px 12px;
+  font-weight: bold;
+  background-color: #eee;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+#preloader {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader::after {
+  content: '';
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 0.95em;
+  color: #444;
+}
+.footer strong {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}

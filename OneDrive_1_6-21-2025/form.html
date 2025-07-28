@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UN SDGs Registration Form</title>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      background-color: #fff;
+      max-width: 550px;
+      margin: 80px auto;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .checkbox-group label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: #3498db;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+
+    /* Back button styles */
+    #corner-back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10001;
+    }
+
+    #corner-back-button:hover {
+      background: #444;
+    }
+
+#preloader {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #preloader::after {
+            content: '';
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0%   { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+    <p>Please wait...</p>
+  </div>
+
+  <!-- Back Button -->
+  <button id="corner-back-button">← Back</button>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <h1>UN SDGs Registration Form</h1>
+    <form action="#" method="post">
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="gender">Gender:</label>
+      <select name="gender" required>
+        <option value="" disabled selected>Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+        <option value="Rather Not Say">Rather Not Say</option>
+      </select>
+
+      <label>SDG(s) of Interest:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="sdgs" value="No Poverty"> No Poverty</label>
+        <label><input type="checkbox" name="sdgs" value="Quality Education"> Quality Education</label>
+        <label><input type="checkbox" name="sdgs" value="Climate Action"> Climate Action</label>
+        <label><input type="checkbox" name="sdgs" value="Gender Equality"> Gender Equality</label>
+        <label><input type="checkbox" name="sdgs" value="Clean Water and Sanitation"> Clean Water and Sanitation</label>
+        <label><input type="checkbox" name="sdgs" value="Affordable and Clean Energy"> Affordable and Clean Energy</label>
+        <label><input type="checkbox" name="sdgs" value="Decent work and Economic Growth"> Decent work and Economic Growth</label>
+        <label><input type="checkbox" name="sdgs" value="Industry, Innovation, and Infrastructure"> Industry, Innovation, and Infrastructure</label>
+        <label><input type="checkbox" name="sdgs" value="Reduced Inequalities"> Reduced Inequalities</label>
+        <label><input type="checkbox" name="sdgs" value="Sustainable Cities and Communities"> Sustainable Cities and Communities</label>
+        <label><input type="checkbox" name="sdgs" value="Responsible Consumption and Production"> Responsible Consumption and Production</label>
+        <label><input type="checkbox" name="sdgs" value="Life Below Water"> Life Below Water</label>
+        <label><input type="checkbox" name="sdgs" value="Life on Land"> Life on Land</label>
+        <label><input type="checkbox" name="sdgs" value="Peace and Justice"> Peace and Justice</label>
+        <label><input type="checkbox" name="sdgs" value="Partnerships for the Goals"> Partnerships for the Goals</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const backButton = document.getElementById("corner-back-button");
+    const preloader = document.getElementById("preloader");
+
+    backButton.addEventListener("click", () => {
+      preloader.style.display = "flex";
+      setTimeout(() => {
+        window.location.href = "../index.html";
+      }, 1200);
+    });
+  </script>
+
+</body>
+</html>

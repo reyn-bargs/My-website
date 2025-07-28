@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Periodic Table of Elements</title>
+<style>
+    body {
+        background-color: #black;
+        font-family: Arial, sans-serif;
+        color: black;
+        margin: 0;
+        padding: 20px;
+    }
+	#preloader {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #preloader::after {
+            content: '';
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0%   { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .back-button {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            padding: 8px 12px;
+            font-weight: bold;
+            background-color: #eee;
+            color: #333;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+
+    table {
+        border-collapse: separate;
+        border-spacing: 8px;
+        margin: auto;
+    }
+
+    td, th {
+        border: 1px solid #444;
+        border-radius: 12px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        transition: 0.3s;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    td:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255,255,255,0.2);
+        cursor: pointer;
+    }
+
+    /* HIDE empty cells */
+    td[style*="border: none"] {
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+</style>
+</head>
+<body>
+<!-- Back Button -->
+<button class="back-button" onclick="goBack()">← Back</button>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<script>
+    function goBack() {
+        const preloader = document.getElementById('preloader');
+        preloader.style.display = 'flex';
+        setTimeout(() => {
+            window.location.href = '../index.html';
+        }, 1000);
+    }
+</script>
+
+<!-- Periodic Table -->
+<table border="1" align="center" cellpadding="10" cellspacing="0" style="font-family: Arial; font-size: 14px;">
+
+    <caption><h2>PERIODIC TABLE OF ELEMENTS</h2></caption>
+
+
+    <!-- Row 1 -->
+    <tr>
+        <td bgcolor="#ADD8E6">
+            <b>1<br>H</b><br>1.008
+        </td>
+        <td colspan="16" style="border: none;"></td>
+        <td bgcolor="#DDA0DD">
+            <b>2<br>He</b><br>4.0026
+        </td>
+    </tr>
+
+    <!-- Row 2 -->
+    <tr>
+        <td bgcolor="#FFC0CB">
+            <b>3<br>Li</b><br>6.94
+        </td>
+        <td bgcolor="#FFD700">
+            <b>4<br>Be</b><br>9.0122
+        </td>
+        <td colspan="10" style="border: none;"></td>
+        <td bgcolor="#4E6688">
+            <b>5<br>B</b><br>10.81
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>6<br>C</b><br>12.011
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>7<br>N</b><br>14.007
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>8<br>O</b><br>15.999
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>9<br>F</b><br>18.998
+        </td>
+        <td bgcolor="#DDA0DD">
+            <b>10<br>Ne</b><br>20.180
+        </td>
+    </tr>
+
+    <!-- Row 3 -->
+    <tr>
+        <td bgcolor="#FFC0CB">
+            <b>11<br>Na</b><br>22.990
+        </td>
+        <td bgcolor="#FFD700">
+            <b>12<br>Mg</b><br>24.305
+        </td>
+        <td colspan="10" style="border: none;"></td>
+        <td bgcolor="#90EE90">
+            <b>13<br>Al</b><br>26.982
+        </td>
+        <td bgcolor="#4E6688">
+            <b>14<br>Si</b><br>28.085
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>15<br>P</b><br>30.974
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>16<br>S</b><br>32.06
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>17<br>Cl</b><br>35.45
+        </td>
+        <td bgcolor="#DDA0DD">
+            <b>18<br>Ar</b><br>39.948
+        </td>
+    </tr>
+
+    <!-- Row 4 -->
+    <tr>
+        <td bgcolor="#FFC0CB">
+            <b>19<br>K</b><br>39.098
+        </td>
+        <td bgcolor="#FFD700">
+            <b>20<br>Ca</b><br>40.078
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>21<br>Sc</b><br>44.956
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>22<br>Ti</b><br>47.867
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>23<br>V</b><br>50.942
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>24<br>Cr</b><br>51.996
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>25<br>Mn</b><br>54.938
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>26<br>Fe</b><br>55.845
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>27<br>Co</b><br>58.933
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>28<br>Ni</b><br>58.693
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>29<br>Cu</b><br>63.546
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>30<br>Zn</b><br>65.38
+        </td>
+        <td bgcolor="#90EE90">
+            <b>31<br>Ga</b><br>69.723
+        </td>
+        <td bgcolor="#4E6688">
+            <b>32<br>Ge</b><br>72.63
+        </td>
+        <td bgcolor="#4E6688">
+            <b>33<br>As</b><br>74.922
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>34<br>Se</b><br>78.971
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>35<br>Br</b><br>79.904
+        </td>
+        <td bgcolor="#DDA0DD">
+            <b>36<br>Kr</b><br>83.798
+        </td>
+    </tr>
+
+ <!-- Row 5 -->
+
+    <tr>
+        <td bgcolor="#FFC0CB">
+            <b>37<br>Rb</b><br>85.468
+        </td>
+        <td bgcolor="#FFD700">
+            <b>38<br>Sr</b><br>87.62
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>39<br>Y</b><br>88.906
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>40<br>Zr</b><br>91.224
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>41<br>Nb</b><br>92.906
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>42<br>Mo</b><br>95.95
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>43<br>Tc</b><br>98
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>44<br>Ru</b><br>101.07
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>45<br>Rh</b><br>102.91
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>46<br>Pd</b><br>106.42
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>47<br>Ag</b><br>107.87
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>48<br>Cd</b><br>112.41
+        </td>
+        <td bgcolor="#90EE90">
+            <b>49<br>In</b><br>114.82
+        </td>
+        <td bgcolor="#90EE90">
+            <b>50<br>Sn</b><br>118.71
+        </td>
+        <td bgcolor="#4E6688">
+            <b>51<br>Sb</b><br>121.76
+        </td>
+        <td bgcolor="#4E6688">
+            <b>52<br>Te</b><br>127.60
+        </td>
+        <td bgcolor="#ADD8E6">
+            <b>53<br>I</b><br>126.90
+        </td>
+        <td bgcolor="#DDA0DD">
+            <b>54<br>Xe</b><br>131.29
+        </td>
+    </tr>
+
+ <!-- Row 6 -->
+
+    <tr>
+        <td bgcolor="#FFC0CB">
+            <b>55<br>Cs</b><br>132.91
+        </td>
+        <td bgcolor="#FFD700">
+            <b>56<br>Ba</b><br>137.33
+        </td>
+        <td bgcolor="white">
+            <b><br></b><br>
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>72<br>Hf</b><br>178.49
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>73<br>Ta</b><br>180.95
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>74<br>W</b><br>183.84
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>75<br>Re</b><br>186.21
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>76<br>Os</b><br>190.23
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>77<br>Ir</b><br>192.22
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>78<br>Pt</b><br>195.08
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>79<br>Au</b><br>196.97
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>80<br>Hg</b><br>200.59
+        </td>
+        <td bgcolor="#90EE90">
+            <b>81<br>Tl</b><br>204.38
+        </td>
+        <td bgcolor="#90EE90">
+            <b>82<br>Pb</b><br>207.2
+        </td>
+        <td bgcolor="#90EE90">
+            <b>83<br>Bi</b><br>208.98
+        </td>
+        <td bgcolor="#90EE90">
+            <b>84<br>Po</b><br>209
+        </td>
+        <td bgcolor="#4E6688">
+            <b>85<br>At</b><br>210
+        </td>
+        <td bgcolor="#DDA0DD">
+            <b>86<br>Rn</b><br>222
+    </tr>
+ <!-- Row 7 -->
+
+    <tr>
+        <td bgcolor="#FFC0CB">
+            <b>87<br>Fr</b><br>223
+        </td>
+        <td bgcolor="#FFD700">
+            <b>88<br>Ra</b><br>226
+        </td>
+        <td bgcolor="white">
+            <b><br></b><br>
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>104<br>Rf</b><br>267
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>105<br>Db</b><br>268
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>106<brSg</b><br>269
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>107<br>Bh</b><br>270
+        </td>
+        <td bgcolor="#FFFF99">
+            <b>108<br>Hs</b><br>277
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>109<br>Mt</b><br>278
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>110<br>Ds</b><br>281
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>111<br>NRg</b><br>282
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>112<br>Cn</b><br>285
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>113<br>Nh</b><br>286
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>114<br>Fl</b><br>289
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>115<br>Mc</b><br>290
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>116<br>Lv</b><br>293
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>117<br>Ts</b><br>294
+        </td>
+        <td bgcolor="#F2F2F2">
+            <b>118<br>Og</b><br>294
+	</td>
+    </tr>
+
+    <!-- Lanthanides Label -->
+    <tr>
+        <td colspan="2" style="border: none;"></td>
+        <td colspan="15" align="center"><b>57-71: Lanthanides</b></td>
+    </tr>
+
+    <!-- Lanthanides Row -->
+    <tr>
+        <td colspan="2" style="border: none;"></td>
+        <td bgcolor="#AFEEEE"><b>57<br>La</b><br>138.91</td>
+        <td bgcolor="#AFEEEE"><b>58<br>Ce</b><br>140.12</td>
+        <td bgcolor="#AFEEEE"><b>59<br>Pr</b><br>140.91</td>
+        <td bgcolor="#AFEEEE"><b>60<br>Nd</b><br>144.24</td>
+        <td bgcolor="#AFEEEE"><b>61<br>Pm</b><br>145</td>
+        <td bgcolor="#AFEEEE"><b>62<br>Sm</b><br>150.36</td>
+        <td bgcolor="#AFEEEE"><b>63<br>Eu</b><br>151.96</td>
+        <td bgcolor="#AFEEEE"><b>64<br>Gd</b><br>157.25</td>
+        <td bgcolor="#AFEEEE"><b>65<br>Tb</b><br>158.93</td>
+        <td bgcolor="#AFEEEE"><b>66<br>Dy</b><br>162.5</td>
+        <td bgcolor="#AFEEEE"><b>67<br>Ho</b><br>164.93</td>
+        <td bgcolor="#AFEEEE"><b>68<br>Er</b><br>167.26</td>
+        <td bgcolor="#AFEEEE"><b>69<br>Tm</b><br>168.93</td>
+        <td bgcolor="#AFEEEE"><b>70<br>Yb</b><br>173.05</td>
+        <td bgcolor="#AFEEEE"><b>71<br>Lu</b><br>174.97</td>
+    </tr>
+
+    <!-- Actinides Label -->
+    <tr>
+        <td colspan="2" style="border: none;"></td>
+        <td colspan="15" align="center"><b>89-103: Actinides</b></td>
+    </tr>
+
+    <!-- Actinides Row -->
+    <tr>
+        <td colspan="2" style="border: none;"></td>
+        <td bgcolor="#E0FFFF"><b>89<br>Ac</b><br>227</td>
+        <td bgcolor="#E0FFFF"><b>90<br>Th</b><br>232.04</td>
+        <td bgcolor="#E0FFFF"><b>91<br>Pa</b><br>231.04</td>
+        <td bgcolor="#E0FFFF"><b>92<br>U</b><br>238.03</td>
+        <td bgcolor="#E0FFFF"><b>93<br>Np</b><br>237</td>
+        <td bgcolor="#E0FFFF"><b>94<br>Pu</b><br>244</td>
+        <td bgcolor="#E0FFFF"><b>95<br>Am</b><br>243</td>
+        <td bgcolor="#E0FFFF"><b>96<br>Cm</b><br>247</td>
+        <td bgcolor="#E0FFFF"><b>97<br>Bk</b><br>247</td>
+        <td bgcolor="#E0FFFF"><b>98<br>Cf</b><br>251</td>
+        <td bgcolor="#E0FFFF"><b>99<br>Es</b><br>252</td>
+        <td bgcolor="#E0FFFF"><b>100<br>Fm</b><br>257</td>
+        <td bgcolor="#E0FFFF"><b>101<br>Md</b><br>258</td>
+        <td bgcolor="#E0FFFF"><b>102<br>No</b><br>259</td>
+        <td bgcolor="#E0FFFF"><b>103<br>Lr</b><br>266</td>
+    </tr>
+</table>
+
+</body>
+</html>

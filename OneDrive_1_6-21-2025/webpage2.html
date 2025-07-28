@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sustainable Development Goals</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        ul.sdg-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .sdg-item {
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: left;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .sdg-item:hover {
+            transform: scale(1.03);
+        }
+
+        .sdg-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .sdg-item h3 {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .sdg-item p {
+            font-size: 14px;
+        }
+
+        .sdg1 { background-color: #e5243b; }
+        .sdg2 { background-color: #dda63a; }
+        .sdg3 { background-color: #4c9f38; }
+        .sdg4 { background-color: #c5192d; }
+        .sdg5 { background-color: #ff3a21; }
+        .sdg6 { background-color: #26bde2; }
+        .sdg7 { background-color: #fcc30b; }
+        .sdg8 { background-color: #a21942; }
+        .sdg9 { background-color: #fd6925; }
+        .sdg10 { background-color: #dd1367; }
+        .sdg11 { background-color: #fd9d24; }
+        .sdg12 { background-color: #bf8b2e; }
+        .sdg13 { background-color: #3f7e44; }
+        .sdg14 { background-color: #0a97d9; }
+        .sdg15 { background-color: #56c02b; }
+        .sdg16 { background-color: #00689d; }
+        .sdg17 { background-color: #19486a; }
+		
+		#corner-back-button {
+		position: fixed;
+		top: 20px;
+		left: 20px;
+		background: #222;
+		color: white;
+		border: none;
+		padding: 10px 15px;
+		border-radius: 6px;
+		font-size: 14px;
+		cursor: pointer;
+		z-index: 9999;
+}
+
+		#corner-back-button:hover {
+		background-color: #444;
+}
+#preloader {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #preloader::after {
+            content: '';
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0%   { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Sustainable Development Goals (SDGs)</h1>
+    <p>Explore the 17 Global Goals for a better and more sustainable future for all.</p>
+    <a href="webpage1.html" class="back-button">← Back to SDG 10</a>
+
+	<button id="corner-back-button">← Back</button>
+
+	<div id="preloader" style="display: none;">
+	<div class="loader"></div>
+	<p>Please wait...</p>
+</div>
+
+    <ul class="sdg-list">
+        <li class="sdg-item sdg1">
+            <img src="https://miro.medium.com/max/3072/1*9KeYUomO4E0EqXT24XUypQ.png" alt="SDG 1">
+            <h3>SDG 1 - No Poverty</h3>
+            <p>End poverty in all its forms everywhere.</p>
+        </li>
+        <li class="sdg-item sdg2">
+            <img src="https://www.kit.nl/wp-content/uploads/2019/02/E_SDG-goals_icons-individual-rgb-02.png" alt="SDG 2">
+            <h3>SDG 2 - Zero Hunger</h3>
+            <p>End hunger and promote sustainable agriculture.</p>
+        </li>
+        <li class="sdg-item sdg3">
+            <img src="https://miro.medium.com/max/3072/1*bD6Q8IDG3Ef444SAOnNiyg.png" alt="SDG 3">
+            <h3>SDG 3 - Good Health and Well-being</h3>
+            <p>Ensure healthy lives and well-being for all.</p>
+        </li>
+        <li class="sdg-item sdg4">
+            <img src="https://goumbook.com/wp-content/uploads/2020/06/sdg4-820x820.png" alt="SDG 4">
+            <h3>SDG 4 - Quality Education</h3>
+            <p>Provide inclusive and equitable education.</p>
+        </li>
+        <li class="sdg-item sdg5">
+            <img src="https://www.its.ac.id/sustainability/wp-content/uploads/sites/120/2020/08/SDG_5-1024x1024.png" alt="SDG 5">
+            <h3>SDG 5 - Gender Equality</h3>
+            <p>Achieve gender equality and empower all women and girls.</p>
+        </li>
+        <li class="sdg-item sdg6">
+            <img src="https://cdn-images-1.medium.com/max/1200/1*vHFKcBHOOULUaRDnnb2nuw.png" alt="SDG 6">
+            <h3>SDG 6 - Clean Water and Sanitation</h3>
+            <p>Ensure availability and sustainable management of water.</p>
+        </li>
+        <li class="sdg-item sdg7">
+            <img src="https://www.unoosa.org/images/ourwork/SDGs/E_SDG_goals_icons-individual-rgb-07.png" alt="SDG 7">
+            <h3>SDG 7 - Affordable and Clean Energy</h3>
+            <p>Ensure access to sustainable energy for all.</p>
+        </li>
+        <li class="sdg-item sdg8">
+            <img src="https://elemental.green/wp-content/uploads/2019/05/E_SDG-goals_icons-individual-rgb-08.png" alt="SDG 8">
+            <h3>SDG 8 - Decent Work and Economic Growth</h3>
+            <p>Promote inclusive and sustainable economic growth.</p>
+        </li>
+        <li class="sdg-item sdg9">
+            <img src="https://www.unoosa.org/images/ourwork/SDGs/E_SDG_goals_icons-individual-rgb-09.png" alt="SDG 9">
+            <h3>SDG 9 - Industry, Innovation, and Infrastructure</h3>
+            <p>Build resilient infrastructure and foster innovation.</p>
+        </li>
+        <li class="sdg-item sdg10">
+            <img src="https://www.its.ac.id/sustainability/wp-content/uploads/sites/120/2020/08/SDG_10-1-1024x1024.png" alt="SDG 10">
+            <h3>SDG 10 - Reduced Inequalities</h3>
+            <p>Reduce inequality within and among countries.</p>
+        </li>
+        <li class="sdg-item sdg11">
+            <img src="https://whatcanyoudo.earth/wp-content/uploads/2017/01/E_SDG-goals_icons-individual-rgb-11-1024x1024.png" alt="SDG 11">
+            <h3>SDG 11 - Sustainable Cities and Communities</h3>
+            <p>Make cities inclusive, safe, and resilient.</p>
+        </li>
+        <li class="sdg-item sdg12">
+            <img src="https://www.kit.nl/wp-content/uploads/2019/02/E_SDG-goals_icons-individual-rgb-12.png" alt="SDG 12">
+            <h3>SDG 12 - Responsible Consumption and Production</h3>
+            <p>Ensure sustainable consumption and production.</p>
+        </li>
+        <li class="sdg-item sdg13">
+            <img src="https://elemental.green/wp-content/uploads/2019/05/E_SDG-goals_icons-individual-rgb-13-1080x1080.png" alt="SDG 13">
+            <h3>SDG 13 - Climate Action</h3>
+            <p>Take urgent action to combat climate change.</p>
+        </li>
+        <li class="sdg-item sdg14">
+            <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-14-1024x1024.png" alt="SDG 14">
+            <h3>SDG 14 - Life Below Water</h3>
+            <p>Conserve and use oceans, seas, and marine resources.</p>
+        </li>
+        <li class="sdg-item sdg15">
+            <img src="https://www.its.ac.id/sustainability/wp-content/uploads/sites/120/2020/08/SDG_15-1024x1024.png" alt="SDG 15">
+            <h3>SDG 15 - Life on Land</h3>
+            <p>Protect, restore, and promote sustainable use of land ecosystems.</p>
+        </li>
+        <li class="sdg-item sdg16">
+            <img src="https://www.appropedia.org/w/images/thumb/e/ed/SDG16.png/450px-SDG16.png" alt="SDG 16">
+            <h3>SDG 16 - Peace, Justice and Strong Institutions</h3>
+            <p>Promote peace and access to justice for all.</p>
+        </li>
+        <li class="sdg-item sdg17">
+            <img src="https://www.appropedia.org/w/images/thumb/4/43/SDG17.png/600px-SDG17.png" alt="SDG 17">
+            <h3>SDG 17 - Partnerships for the Goals</h3>
+            <p>Strengthen global partnerships for sustainable development.</p>
+        </li>
+    </ul>
+
+</body>
+<script>
+document.getElementById("corner-back-button").addEventListener("click", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) preloader.style.display = "flex";
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 1200);
+});
+
+</script>
+</html>
