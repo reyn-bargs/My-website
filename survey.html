@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link href="survey.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>CONTACT</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+    </nav>
+  </header>
+
+  <!-- Preloader -->
+  <div id="preloader" style="display: none;">
+    <div class="loader"></div>
+    <p>Please wait...</p>
+  </div>
+
+  <!-- Back Button -->
+  <button id="back-button">← Back</button>
+
+  <div class="form-container">
+    <form id="surveyForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="feedback"></p>
+    </form>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwcf87X1l_XgwpbyqLIHqOu_D-bUUymbQl-o6L3kJCFGj7dsCUFmqq_VoPQIvQ4hCcS_g/exec";
+    const form = document.getElementById("surveyForm");
+    const responseMsg = document.getElementById("feedback");
+    const preloader = document.getElementById("preloader");
+
+    // Show preloader and go back to index
+    document.getElementById("back-button").addEventListener("click", function () {
+      preloader.style.display = "flex";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
+    });
+
+    // Submit form
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const isValid = validateContactForm();
+      if (!isValid) return;
+
+      const isConfirmed = confirm("Are you sure you want to send this message?");
+      if (!isConfirmed) {
+        responseMsg.style.color = "orange";
+        responseMsg.textContent = "Message not sent. You can review your inputs.";
+        return;
+      }
+
+      preloader.style.display = "flex";
+
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        preloader.style.display = "none";
+        responseMsg.style.color = "green";
+        responseMsg.textContent = "Message sent successfully!";
+        form.reset();
+      })
+      .catch(error => {
+        preloader.style.display = "none";
+        responseMsg.style.color = "red";
+        responseMsg.textContent = "Error sending message.";
+        console.error("Error!", error.message);
+      });
+    });
+
+    function validateContactForm() {
+      const fields = form.querySelectorAll('#name, #email, #message');
+      let allFilled = true;
+      let validEmail = true;
+
+      responseMsg.textContent = "";
+      responseMsg.style.color = "red";
+
+      fields.forEach(field => field.classList.remove("error"));
+
+      fields.forEach(field => {
+        if (field.value.trim() === "") {
+          field.classList.add("error");
+          allFilled = false;
+          alert(`Please fill out the ${field.previousElementSibling.innerText.toLowerCase()} field.`);
+        }
+      });
+
+      const emailField = document.getElementById("email");
+      const emailValue = emailField.value.trim();
+
+      if (!emailValue.includes("@")) {
+        emailField.classList.add("error");
+        validEmail = false;
+        alert("Please enter a valid email address.");
+      }
+
+      if (!allFilled || !validEmail) {
+        responseMsg.textContent = !allFilled
+          ? "Please fill out all fields."
+          : "Please enter a valid email address.";
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
