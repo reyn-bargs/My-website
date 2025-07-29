@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reign's Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reign_resume.css" />
+</head>
+<body>
+
+<!-- Back Button -->
+<button class="back-button" onclick="goBack()">← Back</button>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<script>
+  function goBack() {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'flex';
+    setTimeout(() => {
+      window.location.href = '../survey.html';
+    }, 1000);
+  }
+</script>
+
+<!-- Resume Content -->
+<div class="resume">
+  <div class="header">
+    <div class="intro">
+      <h1>Reign Maria Gwynne N. Bragas</h1>
+      <p>IT Profession</p>
+      <p><strong>Address:</strong> 926 El Camino Road, Sto. Niño, Barangay Camalig, Meycauayan City, Bulacan</p>
+      <p><strong>Email:</strong> bragasreignmg@gmail.com</p>
+      <p><strong>Telephone:</strong> +63 921 298 5085</p>
+    </div>
+    <img src="b9a13beb-9a3c-456b-827e-e400e787134d.jpg" alt="Reign's photo" class="profile-pic" />
+  </div>
+
+  <div class="info">
+    <div class="box">
+      <h2>Career Objective</h2>
+      <p>To secure a challenging position in a reputable organization where I can expand my knowledge, skills, and training. Eager to apply my enthusiasm for technology and contribute meaningfully to projects, while continuing to grow personally and professionally.</p>
+    </div>
+
+    <div class="box">
+      <h2>Skills</h2>
+      <ul>
+        <li>Communication</li>
+        <li>Team Collaboration</li>
+        <li>Advanced Programming</li>
+        <li>Graphic Design</li>
+        <li>Problem Solving and Debugging</li>
+        <li>UI/UX Design Fundamentals</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Work Immersion</h2>
+      <p><strong>Place:</strong> Barangay Health Center<br>
+      <strong>Start Date:</strong> May 16, 2024 - May 31, 2024<br>
+      <strong>What I Did:</strong> Assigned to clerical and support roles such as encoding patient data into health records, organizing and performing inventory of medicine supplies, and managing the in-and-out tracking of medicines. Helped ensure accurate documentation and efficient administrative flow at the health center.</p>
+    </div>
+
+    <div class="box">
+      <h2>Educational Background</h2>
+      <p><strong>Primary:</strong> St. Mary's Academy of Sto. Niño<br>Meycauayan, Bulacan<br>2011-2018</p>
+      <p><strong>Secondary:</strong> Meycauayan College<br>Meycauayan, Bulacan<br>2018-2024</p>
+      <p><strong>Tertiary:</strong> Far Eastern University Institute of Technology<br>Sampaloc, Manila<br>Bachelor of Science in Information Technology with Specialization in Cybersecurity<br>(Undergraduate)</p>
+    </div>
+
+    <div class="box">
+      <h2>Personal Data</h2>
+      <p><strong>Full Name:</strong> Bragas, Reign Maria Gwynne Natividad<br>
+      <strong>Date of Birth:</strong> February 1, 2006<br>
+      <strong>Place of Birth:</strong> Balagtas, Bulacan<br>
+      <strong>Civil Status:</strong> Single<br>
+      <strong>Nationality:</strong> Filipino<br>
+      <strong>Religion:</strong> Roman Catholic<br>
+      <strong>Languages Spoken:</strong> Filipino (Tagalog), English</p>
+    </div>
+  </div>
+
+  <div class="socials">
+    <a href="https://www.facebook.com/reignmariagwynne.natividadbragas/">Contact me Through Facebook</a>
+  </div>
+
+  <div class="footer">
+    <p>I hereby certify that the above information is true and correct to the best of my knowledge and beliefs.</p>
+    <p><strong>REIGN MARIA GWYNNE N. BRAGAS</strong></p>
+  </div>
+</div>
+
+</body>
+</html>
